@@ -22,7 +22,7 @@ FAIL src/App.test.tsx
 
     Ignored nodes: comments, <script />, <style />
     [36m<p>[39m
-      [0mHello World by Max Watkins for CISC275.[0m
+      [0mHello World by Maxyne Watkins for CISC275.[0m
     [36m</p>[39m
 
     (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
@@ -39,7 +39,7 @@ FAIL src/App.test.tsx
             [0mUD CISC275 with React Hooks and TypeScript[0m
           [36m</header>[39m
           [36m<p>[39m
-            [0mHello World by Max Watkins for CISC275.[0m
+            [0mHello World by Maxyne Watkins for CISC275.[0m
           [36m</p>[39m
         [36m</div>[39m
       [36m</div>[39m
@@ -73,5 +73,5 @@ All files |     100 |      100 |     100 |     100 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 failed, 1 passed, 2 total
 Snapshots:   0 total
-Time:        1.718 s
+Time:        2.185 s
 Ran all test suites.
