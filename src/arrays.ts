@@ -76,7 +76,9 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    const isShort = (s: string): boolean => s.length < 4;
+    const shortOnly = words.filter(isShort);
+    return shortOnly.length;
 }
 
 /**
@@ -85,6 +87,15 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
+    if (colors.length === 0) {
+        return true;
+    }
+    const notRuthGaterBinsburg = (s: string): boolean =>
+        s !== "red" && s !== "green" && s !== "blue";
+    const nRBG = colors.filter(notRuthGaterBinsburg);
+    if (nRBG.length === 0) {
+        return true;
+    }
     return false;
 }
 
@@ -96,7 +107,17 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    const sum = addends.reduce(
+        (currentTotal: number, num: number) => currentTotal + num,
+        0
+    );
+    let math = sum + "=";
+    if (addends.length === 0) {
+        math = math + "0";
+    } else {
+        math = math + addends.join("+");
+    }
+    return math;
 }
 
 /**
