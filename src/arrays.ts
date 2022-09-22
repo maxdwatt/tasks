@@ -1,4 +1,7 @@
+import { findAllByAltText } from "@testing-library/react";
 import { debug } from "console";
+import { sortAndDeduplicateDiagnostics } from "typescript";
+import { isNumberObject } from "util/types";
 
 /**
  * Consume an array of numbers, and return a new array containing
@@ -130,5 +133,18 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    const allPositive = values.every((value: number): boolean => value > 0);
+    if (allPositive === true) {
+        const sum = values.reduce(
+            (currentTotal: number, num: number) => currentTotal + num,
+            0
+        );
+        const injected = [...values, sum];
+        return injected;
+    }
+    let nsum = 0;
+    const ninjected = values.map((n: number): number =>
+        n > 0 ? (nsum = nsum + n) : nsum
+    );
+    return ninjected;
 }
