@@ -1,7 +1,7 @@
-import { findAllByAltText } from "@testing-library/react";
-import { debug } from "console";
-import { sortAndDeduplicateDiagnostics } from "typescript";
-import { isNumberObject } from "util/types";
+//import { findAllByAltText } from "@testing-library/react";
+//import { debug } from "console";
+//import { sortAndDeduplicateDiagnostics } from "typescript";
+//import { isNumberObject } from "util/types";
 
 /**
  * Consume an array of numbers, and return a new array containing
