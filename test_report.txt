@@ -5,6 +5,38 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+FAIL src/arrays.test.ts
+  ● Testing the array functions › Testing the injectPositive function
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 5
+    + Received  + 4
+
+      Array [
+        100,
+    -   199,
+    -   1,
+    -   -5,
+    +   299,
+        300,
+    -   7,
+    -   3,
+    +   300,
+    +   307,
+    +   310,
+      ]
+
+      267 |         expect(injectPositive(NUMBERS_3)).toEqual([5, 5]);
+      268 |         expect(injectPositive(NUMBERS_4)).toEqual([0]);
+    > 269 |         expect(injectPositive(NUMBERS_5)).toEqual([100, 199, 1, -5, 300, 7, 3]);
+          |                                           ^
+      270 |         expect(injectPositive(NUMBERS_6)).toEqual([-100, 0, -200, 100, 200]);
+      271 |         expect(injectPositive(NUMBERS_7)).toEqual([199, 1, 550, 50, 200, 1000]);
+      272 |     });
+
+      at Object.<anonymous> (src/arrays.test.ts:269:43)
+
 PASS src/HtmlCss.test.tsx
 PASS src/functions.test.ts
 PASS src/text.test.tsx
@@ -14,11 +46,12 @@ File          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 --------------|---------|----------|---------|---------|-------------------
 All files     |     100 |      100 |     100 |     100 |                   
  App.tsx      |     100 |      100 |     100 |     100 |                   
+ arrays.ts    |     100 |      100 |     100 |     100 |                   
  functions.ts |     100 |      100 |     100 |     100 |                   
 --------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 4 passed, 4 total
-Tests:       14 passed, 14 total
+Test Suites: 1 failed, 4 passed, 5 total
+Tests:       1 failed, 22 passed, 23 total
 Snapshots:   0 total
-Time:        3.124 s
+Time:        4.939 s
 Ran all test suites.
