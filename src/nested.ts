@@ -267,9 +267,7 @@ export function editOption(
             type: q.type,
             published: q.published,
             options:
-                q.id === targetId && targetOptionIndex === -1
-                    ? [...q.options, newOption]
-                    : q.id === targetId && targetOptionIndex !== -1
+                q.id === targetId
                     ? addSplice(q.options, targetOptionIndex, newOption)
                     : q.options,
             expected: q.expected,
@@ -281,6 +279,10 @@ export function editOption(
 
 export function addSplice(options: string[], t: number, o: string): string[] {
     const helper = [...options];
+    if (t === -1) {
+        const h = [...options, o];
+        return h;
+    }
     helper.splice(t, 1, o);
     return helper;
 }
