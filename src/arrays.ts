@@ -1,6 +1,6 @@
 //import { findAllByAltText } from "@testing-library/react";
 //import { debug } from "console";
-//import { sortAndDeduplicateDiagnostics } from "typescript";
+// import { sortAndDeduplicateDiagnostics } from "typescript";
 //import { isNumberObject } from "util/types";
 
 /**
